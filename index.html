@@ -230,47 +230,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Hexo可以简洁的写出文章"><a href="#Hexo可以简洁的写出文章" class="headerlink" title="Hexo可以简洁的写出文章"></a>Hexo可以简洁的写出文章</h2><ul>
-<li>第一步<ul>
+        <h2 id="Hexo可以简洁的写出文章"><a href="#Hexo可以简洁的写出文章" class="headerlink" title="Hexo可以简洁的写出文章"></a>Hexo可以简洁的写出文章</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><ul>
 <li>进入Hexo的安装目录，创建一篇文章</li>
 </ul>
-</li>
-</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;要创建的文章名&quot;</span><br></pre></td></tr></table></figure>
-<p><img src="/Users/wangju/Desktop/blog/source/_posts/使用Hexo来写自己的博客/1.png" alt="image 1"></p>
-<ul>
-<li><p>第二步</p>
-<ul>
+<p><img src="./使用Hexo来写自己的博客/1.png" alt="image 1"></p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><ul>
 <li><p>编辑</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: my new post #可以改成中文的，如“新文章”</span><br><span class="line">date: 2015-05-15 22:56:29 #发表日期，一般不改动</span><br><span class="line">categories: blog #文章文类</span><br><span class="line">tags: [博客，文章] #文章标签，多于一项时用这种格式（中间的逗号是英文格式），只有一项时使用tags: blog</span><br><span class="line">---</span><br><span class="line">#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，加上</span><br><span class="line">&lt;!--more--&gt;#在&lt;!--more--&gt;之前的内容会显示在首页，之后的内容会被隐藏，当游客点击Read more才能看到。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
 </li>
 </ul>
 <p>然后文章内容就可以直接使用markdown语法直接编辑了</p>
 <ul>
 <li><p>在文章中插入图片</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![image 1](./2.png)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![image 1](./2.png）</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><ul>
+<li>发表文章</li>
+</ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean // 清除缓存</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>生成页面</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g // 生成页面</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
-<li><p>第三步</p>
-<ul>
-<li><p>发表文章</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean // 清除缓存</span><br></pre></td></tr></table></figure>
-</li>
+<li>发布文章</li>
 </ul>
-</li>
-</ul>
-<pre><code>- 生成页面
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g // 生成页面</span><br></pre></td></tr></table></figure>
-
-
-- 发布文章
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d // 发布文章</span><br></pre></td></tr></table></figure>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d // 发布文章</span><br></pre></td></tr></table></figure>
 </code></pre>
       
     </div>
