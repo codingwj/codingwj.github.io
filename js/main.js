@@ -93,7 +93,7 @@ require([], function (){
           // 更多animation:
           // http://daneden.github.io/animate.css/
           var animationNames = [
-            "pulse"
+            "fadeIn"
             ],
             len = animationNames.length,
             randomAnimationName = animationNames[Math.ceil(Math.random() * len) - 1];
