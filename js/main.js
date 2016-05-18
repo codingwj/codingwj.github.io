@@ -90,10 +90,10 @@ require([], function (){
         // 滚动条监听使用scrollreveal.js
         // https://github.com/jlmakes/scrollreveal.js
         require([yiliaConfig.scrollreveal], function (ScrollReveal) {
-          // 更多animation:
+          // 更多animation:,"fadeInRight", "flipInX", "lightSpeedIn","rotateInUpLeft", "slideInUp","zoomIn","pulse",
           // http://daneden.github.io/animate.css/
           var animationNames = [
-            "fadeIn"
+             "fadeIn"
             ],
             len = animationNames.length,
             randomAnimationName = animationNames[Math.ceil(Math.random() * len) - 1];
