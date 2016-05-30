@@ -174,7 +174,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术开发/">技术开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏/">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS开发/">IOS开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术开发/">技术开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏/">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
                     </div>
                 </section>
                 
@@ -252,6 +252,88 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-swift-sqlite" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/30/swift-sqlite/" class="article-date">
+      <time datetime="2016-05-30T09:57:41.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/30/swift-sqlite/">用swift操作sqlLite数据库</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <ul>
+<li>SQLite&#x662F;&#x4E00;&#x6B3E;&#x8F7B;&#x578B;&#x7684;&#x5D4C;&#x5165;&#x5F0F;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5B89;&#x5353;&#x548C;ios&#x5F00;&#x53D1;&#x4F7F;&#x7528;&#x7684;&#x90FD;&#x662F;SQLite&#x6570;&#x636E;&#x5E93;</li>
+<li>&#x7279;&#x70B9; <ul>
+<li>1&#xFF09;&#x5B83;&#x5360;&#x7528;&#x8D44;&#x6E90;&#x975E;&#x5E38;&#x7684;&#x4F4E;&#xFF0C;&#x5728;&#x5D4C;&#x5165;&#x5F0F;&#x8BBE;&#x5907;&#x4E2D;&#xFF0C;&#x53EF;&#x80FD;&#x53EA;&#x9700;&#x8981;&#x51E0;&#x767E;K&#x7684;&#x5185;&#x5B58;&#x5C31;&#x591F;&#x4E86;</li>
+<li>2&#xFF09;&#x5B83;&#x7684;&#x5904;&#x7406;&#x901F;&#x5EA6;&#x6BD4;Mysql&#x3001;PostgreSQL&#x8FD9;&#x4E24;&#x6B3E;&#x8457;&#x540D;&#x7684;&#x6570;&#x636E;&#x5E93;&#x90FD;&#x8FD8;&#x5FEB;</li>
+</ul>
+</li>
+</ul>
+<h2 id="swift-&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x4E3B;&#x8981;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;"><a href="#swift-&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x4E3B;&#x8981;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;" class="headerlink" title="swift &#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x4E3B;&#x8981;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;"></a>swift &#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x4E3B;&#x8981;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;</h2><h3 id="&#x4E00;&#xFF0C;&#x65B0;&#x5EFA;&#x9879;&#x76EE;&#xFF0C;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x8005;&#x5BF9;&#x8C61;"><a href="#&#x4E00;&#xFF0C;&#x65B0;&#x5EFA;&#x9879;&#x76EE;&#xFF0C;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x8005;&#x5BF9;&#x8C61;" class="headerlink" title="&#x4E00;&#xFF0C;&#x65B0;&#x5EFA;&#x9879;&#x76EE;&#xFF0C;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x8005;&#x5BF9;&#x8C61;"></a>&#x4E00;&#xFF0C;&#x65B0;&#x5EFA;&#x9879;&#x76EE;&#xFF0C;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x8005;&#x5BF9;&#x8C61;</h3><p><img src="/2016/05/30/swift-sqlite/sqlite1.png" alt="sqlite - 1"></p>
+<h4 id="&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x8005;&#x5355;&#x4F8B;"><a href="#&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x8005;&#x5355;&#x4F8B;" class="headerlink" title="&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x8005;&#x5355;&#x4F8B;"></a>&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x8005;&#x5355;&#x4F8B;</h4><p>&#x8FD9;&#x91CC;&#x4ECB;&#x7ECD;swift&#x521B;&#x5EFA;&#x5355;&#x4F8B;&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;</p>
+<ul>
+<li>1,&#x5229;&#x7528;dispatch_once</li>
+</ul>
+<p>dispatch&#x9ED8;&#x8BA4;&#x53EA;&#x6267;&#x884C;&#x4E00;&#x904D;&#x4EE3;&#x7801;&#xFF0C;&#x5373;&#x5F53;once_t&#x7B49;&#x4E8E;o&#x7684;&#x65F6;&#x5019;&#x6267;&#x884C;&#x8BE5;&#x4EE3;&#x7801;&#x3002;&#x6240;&#x4EE5;instance&#x53EA;&#x4F1A;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x6B21;</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">var</span> once_t : dispatch_once_t = <span class="number">0</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">var</span> instance : sqLiteManager?</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">func</span> <span class="title">shareManager</span>() -&gt; <span class="title">sqLiteManager</span> </span>{</span><br><span class="line"></span><br><span class="line">    dispatch_once(&amp;once_t) {</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;====<span class="subst">\(once_t)</span>&quot;</span>)</span><br><span class="line">        instance = sqLiteManager()</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> instance!</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.&#x5229;&#x7528;&#x9759;&#x6001;&#x5E38;&#x91CF;&#x7684;&#x503C;&#x76F4;&#x63A5;&#x521D;&#x59CB;&#x5316;&#x5355;&#x4F8B;,static &#x9ED8;&#x8BA4;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x53EA;&#x4F1A;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x6B21;</li></ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/blog/">blog</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IOS开发/">IOS开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2016/05/30/swift-sqlite/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-ruijielogin" class="article article-type-post" itemscope itemprop="blogPost">
   
